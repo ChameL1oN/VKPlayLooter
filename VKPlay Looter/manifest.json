@@ -1,0 +1,18 @@
+{
+  "name": "VKPlay Looter",
+  "description": "Автоматический сбор сундуков, автолайк",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "host_permissions": [	"http://vkplay.live/",	"https://vkplay.live/"	],
+  "content_scripts": [{
+        "matches": [
+          "http://vkplay.live/*",
+          "https://vkplay.live/*"
+        ],
+        "run_at": "document_idle",
+        "js": [
+          "worker.js"
+        ]
+    }]
+}
